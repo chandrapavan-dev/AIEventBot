@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+google-api-python-client = "*"
+orjson = "*"
+google-auth-httplib2 = "*"
+google-auth-oauthlib = "*"
+pytz = "*"
+langchain = "*"
+langchain-openai = "*"
+langchain-google-genai = "*"
+streamlit = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.4"
