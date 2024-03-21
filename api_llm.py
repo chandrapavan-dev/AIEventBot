@@ -9,12 +9,8 @@ from langchain_openai import ChatOpenAI
 
 set_debug(True)
 
-os.environ["OPENAI_API_KEY"] = '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'
-os.environ["GOOGLE_API_KEY"] = 'AIzaSyAlBzc-Xypq5snm4F5pvkp9af6Oi4GMqZI'
 
 model = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
-
-
 # model = ChatGoogleGenerativeAI(model="gemini-pro")
 
 class Event(BaseModel):
