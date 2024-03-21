@@ -56,9 +56,16 @@ def main():
             kolkata_timezone = timezone('Asia/Kolkata')
 
             # Convert to ISO datetime format
-            start_event = datetime.strptime(start_datetime_str, "%Y-%m-%d %H:%M")
+
+            try:
+                start_event = datetime.strptime(start_datetime_str, "%Y-%m-%d %H:%M")
+                end_event = datetime.strptime(end_datetime_str, "%Y-%m-%d %H:%M")
+            except ValueError as ve:
+                print(f"Value error: {ve}")
+                start_event = datetime.strptime(start_datetime_str, "%Y-%m-%d %H:%M:%S")
+                end_event = datetime.strptime(end_datetime_str, "%Y-%m-%d %H:%M:%S")
+
             start_event = kolkata_timezone.localize(start_event).isoformat()
-            end_event = datetime.strptime(end_datetime_str, "%Y-%m-%d %H:%M")
             end_event = kolkata_timezone.localize(end_event).isoformat()
 
             event_obj = {

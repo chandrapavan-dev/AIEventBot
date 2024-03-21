@@ -10,8 +10,8 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # Define calendar ID (primary calendar by default)
-calendar_id = 'primary'
-
+# calendar_id = 'primary'
+calendar_id = 'c_eeea55b05d3fd6c85f916ca86c34b217877eb01d681bd9e46fdeee2f5ad3d8cd@group.calendar.google.com'
 # Set up authentication flow
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
@@ -71,7 +71,7 @@ def get_last_events():
         events_result = (
             service.events()
             .list(
-                calendarId="primary",
+                calendarId=calendar_id,
                 timeMin=now,
                 maxResults=10,
                 singleEvents=True,

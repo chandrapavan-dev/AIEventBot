@@ -1,5 +1,5 @@
-import datetime
 import os
+import datetime
 
 from langchain.globals import set_debug
 from langchain.prompts import PromptTemplate
@@ -9,6 +9,8 @@ from langchain_openai import ChatOpenAI
 
 set_debug(True)
 
+# os.environ["OPENAI_API_KEY"] = ''
+# os.environ["GOOGLE_API_KEY"] = ''
 
 model = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 # model = ChatGoogleGenerativeAI(model="gemini-pro")
